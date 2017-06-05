@@ -10,11 +10,11 @@
         <script src="/js/bootstrap.min.js"></script>
     </head>
     <body ng-app="angular-starter">
-        <div class="jumbotron" ng-controller="AppController">
+        <div class="jumbotron" ng-controller="AppController as appCtrl">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 col-md-offset-3">
-                        <h1>AngularJS v{{number}}.0 Starter</h1>
+                        <h1>AngularJS v{{appCtrl.number}}.0 Starter</h1>
                         <div class="row">
                             <div>
                                 <p>
@@ -22,10 +22,10 @@
                                 </p>
                             </div>
                             <div class="col-md-6">
-                                <button type="button" class="btn btn-primary btn-lg" ng-click="increment()"> Increment </button>
+                                <button type="button" class="btn btn-primary btn-lg" ng-click="appCtrl.increment()"> Increment </button>
                             </div>
                             <div class="col-md-6">
-                                <button type="button" class="btn btn-danger btn-lg" ng-click="decrement()"> Decrement </button>
+                                <button type="button" class="btn btn-danger btn-lg" ng-click="appCtrl.decrement()"> Decrement </button>
                             </div>
                         </div>
                     </div>
