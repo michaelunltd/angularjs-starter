@@ -1,7 +1,6 @@
 angular
-    .module('angular-starter', [])
+    .module('angular-starter')
     .controller('AppController', AppController)
-
 
 function AppController($scope) {
     $scope.number = 1;
