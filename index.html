@@ -3,24 +3,30 @@
         <meta charset="utf-8">
         <title>AngularJS v1.0 Starter</title>
         <script src="node_modules/angular/angular.js"></script>
+        <script src="node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+        <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.min.js"></script>-->
         <script src="app/app.module.js"></script>
         <script src="app/app.controller.js"></script>
+        <script src="app/app.config.js"></script>
         <link rel="stylesheet" href="/css/bootstrap.min.css">
-        <script src="/js/jquery.min.js"></script>
         <script src="/js/bootstrap.min.js"></script>
+        <script src="/js/jquery.min.js"></script>
     </head>
     <body ng-app="angular-starter">
-        <div class="jumbotron" ng-controller="AppController as appCtrl">
+
+        <div class="jumbotron" ng-controller="AppController as appCtrl" style="text-align:center">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 col-md-offset-3">
                         <h1>AngularJS v{{appCtrl.number}}.0 Starter</h1>
+
+                        <div>
+                            <p>
+                            Click increment and decrement to see version number changing.
+                            </p>
+                        </div>
+
                         <div class="row">
-                            <div>
-                                <p>
-                                    Click increment and decrement to see version number changing.
-                                </p>
-                            </div>
                             <div class="col-md-6">
                                 <button type="button" class="btn btn-primary btn-lg" ng-click="appCtrl.increment()"> Increment </button>
                             </div>
@@ -28,9 +34,20 @@
                                 <button type="button" class="btn btn-danger btn-lg" ng-click="appCtrl.decrement()"> Decrement </button>
                             </div>
                         </div>
+
+                        <div class="row well well-lg" style="margin-top:10px">
+                            <div class="col-md-6 col-md-offset-3">
+                                <p>Try Angular UI-Router! Click the buttons and see the changes to your url.</p>
+                                <a class="btn btn-default" ui-sref="hello">Hello</a>
+                                <a class="btn btn-default" ui-sref="about">About</a>
+                                <div ui-view></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
             </div>
         </div>
+
     </body>
 </html>

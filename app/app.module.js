@@ -1,2 +1,2 @@
 angular
-    .module('angular-starter', [])
+    .module('angular-starter', ['ui.router'])
