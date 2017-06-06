@@ -13,9 +13,17 @@
         <script src="/js/jquery.min.js"></script>
     </head>
     <body ng-app="angular-starter">
-
-        <div class="jumbotron" ng-controller="AppController as appCtrl" style="text-align:center">
-            <div class="container">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                    <img alt="Brand" src="/public/images/ng_logo.png" width="15%">
+                </a>
+                </div>
+            </div>
+        </nav>
+        <div class="container" ng-controller="AppController as appCtrl" style="text-align:center">
+            <div class="jumbotron">
                 <div class="row">
                     <div class="col-md-6 col-md-offset-3">
                         <h1>AngularJS v{{appCtrl.number}}.0 Starter</h1>
@@ -34,18 +42,16 @@
                                 <button type="button" class="btn btn-danger btn-lg" ng-click="appCtrl.decrement()"> Decrement </button>
                             </div>
                         </div>
-
-                        <div class="row well well-lg" style="margin-top:10px">
-                            <div class="col-md-6 col-md-offset-3">
-                                <p>Try <em><strong>Angular UI-Router</strong></em>! Click the buttons and see the changes to your url.</p>
-                                <a class="btn btn-default" ui-sref="hello">Hello</a>
-                                <a class="btn btn-default" ui-sref="about">About</a>
-                                <div ui-view></div>
-                            </div>
-                        </div>
                     </div>
                 </div>
-
+            </div>
+            <div class="row well well-sm" style="margin-top:10px">
+                <div class="col-md-6 col-md-offset-3">
+                    <p>Try <em><strong>Angular UI-Router</strong></em>! Click the buttons and see the changes to your url.</p>
+                    <a class="btn btn-default" ui-sref="hello">Hello</a>
+                    <a class="btn btn-default" ui-sref="about">About</a>
+                    <div ui-view></div>
+                </div>
             </div>
         </div>
 
