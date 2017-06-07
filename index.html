@@ -4,13 +4,16 @@
         <title>AngularJS v1.0 Starter</title>
         <script src="node_modules/angular/angular.js"></script>
         <script src="node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
-        <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.min.js"></script>-->
+        <!--- App Main -->
         <script src="app/app.module.js"></script>
         <script src="app/app.controller.js"></script>
         <script src="app/app.config.js"></script>
+        <!--- Home Module -->
+        <script src="app/home/home.controller.js"></script>
+        
         <link rel="stylesheet" href="/css/bootstrap.min.css">
-        <script src="/js/bootstrap.min.js"></script>
         <script src="/js/jquery.min.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
     </head>
     <body ng-app="angular-starter">
         <nav class="navbar navbar-default">
@@ -50,6 +53,7 @@
                     <p>Try <em><strong>Angular UI-Router</strong></em>! Click the buttons and see the changes to your url.</p>
                     <a class="btn btn-default" ui-sref="hello">Hello</a>
                     <a class="btn btn-default" ui-sref="about">About</a>
+                    <a class="btn btn-default" ui-sref="home">Home</a>
                     <div ui-view></div>
                 </div>
             </div>

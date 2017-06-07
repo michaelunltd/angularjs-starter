@@ -15,9 +15,20 @@ function config($stateProvider, $urlRouterProvider) {
         name: 'about',
         url: '/about',
         template: '<p>About UI Router</p>'
-    }
+    };
+
+    var homeState = {
+        name: 'home',
+        url: '/home',
+        templateUrl: 'app/home/home.html',
+        controller: 'HomeController',
+        controllerAs: 'home'
+    };
 
     $stateProvider
         .state(helloState)
         .state(aboutState)
+        .state(homeState)
 }
+
+config.$inject = ['$stateProvider', '$urlRouterProvider'];
