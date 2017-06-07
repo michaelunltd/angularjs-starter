@@ -1,0 +1,23 @@
+<div style="text-align: center">
+    <div class="input-group col-md-6 col-md-offset-3">
+      <input type="text" class="form-control" placeholder="Todo" ng-model="todo.newTodo">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button" ng-click="todo.addTodo()">Add Todo</button>
+      </span>
+    </div>
+</div>
+
+    <div class="col-md-6 col-md-offset-3" style="margin-top:10px;">
+        <table class="table table-striped text-center">
+            <tr>
+                <th>Task</th>
+                <th>Actions</th>
+            </tr>
+            <tr ng-repeat="todo in todo.todos">
+                <td>{{todo}}</td>
+                <td>
+                    <button class="btn btn-dange">Done</button>
+                </td>
+            </tr>
+        </table>
+    </div>

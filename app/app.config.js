@@ -5,30 +5,25 @@ angular
 function config($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/');
 
-    var helloState = {
-        name: 'hello',
-        url: '/hello',
-        template: '<p>Hello World</p>'
-    };
-
-    var aboutState = {
-        name: 'about',
-        url: '/about',
-        template: '<p>About UI Router</p>'
-    };
-
     var homeState = {
         name: 'home',
-        url: '/home',
+        url: '/',
         templateUrl: 'app/home/home.html',
         controller: 'HomeController',
         controllerAs: 'home'
     };
 
+    var todoState = {
+        name: 'todo',
+        url: '/todo',
+        templateUrl: 'app/todo/todo.html',
+        controller: 'TodoController',
+        controllerAs: 'todo'
+    }
+
     $stateProvider
-        .state(helloState)
-        .state(aboutState)
         .state(homeState)
+        .state(todoState)
 }
 
 config.$inject = ['$stateProvider', '$urlRouterProvider'];
