@@ -13,10 +13,10 @@
                 <th>Task</th>
                 <th>Actions</th>
             </tr>
-            <tr ng-repeat="todo in todo.todos">
-                <td>{{todo}}</td>
+            <tr ng-repeat="t in todo.todos">
+                <td>{{t}}</td>
                 <td>
-                    <button class="btn btn-dange">Done</button>
+                    <button class="btn btn-danger" ng-click="todo.markDone(t)">Done</button>
                 </td>
             </tr>
         </table>
