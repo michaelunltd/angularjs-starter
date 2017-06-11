@@ -3,24 +3,52 @@ angular
     .controller('TodoController', TodoController)
 
 function TodoController() {
-    this.newTodo = '';
-    this.todos = [
-        "Learn AngularJS",
-        "Read Strings, StringBuffer and StringBuilder",
-        "AngularJS 1.x + Webpack + ES6 + Babel"
-    ];
+    this.task = '';
 
-    this.addTodo = function() {
-        if (this.newTodo.length != 0) {
-            this.todos.push(this.newTodo)
+    this.todos = [
+        {
+            task: 'Learn Angular v1.x',
+            isCompleted: false,
+            isEditing: false
+        },
+        {
+            task: 'Kotlin for Android Development',
+            isCompleted: false,
+            isEditing: false
         }
-        this.newTodo = '';
+    ]
+
+    this.onCompletedClick = function(todo) {
+        todo.isCompleted = !todo.isCompleted;
     }
 
-    this.markDone = function(todo) {
+    this.addTask = function() {
+        if (this.task) {
+            var newTask = {
+                task: this.task,
+                isCompleted: false,
+                isEditing: false
+            }
+            this.todos.push(newTask);
+            this.task = '';
+        }
+    }
+
+    this.onDeleteTask = function(todo) {
         var index = this.todos.indexOf(todo);
         this.todos.splice(index, 1);
     }
 
+    this.onEditClick = function(todo) {
+        todo.isEditing = true;
+    }
 
+    this.onEditCancelClick = function(todo) {
+        todo.isEditing = false;
+    }
+
+    this.updateTask = function(todo) {
+        todo.task = todo.updatedTask;
+        todo.isEditing = false;
+    }
 }
